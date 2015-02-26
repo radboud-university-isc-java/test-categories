@@ -68,6 +68,11 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>${org.apache.maven.plugins.maven-gpg-plugin.version}</version>
+                        <configuration>
+                            <gpgArguments>
+                                <argument>--batch</argument>
+                            </gpgArguments>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
