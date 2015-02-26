@@ -12,6 +12,10 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
+        <org.apache.maven.plugins.maven-source-plugin.version>2.4</org.apache.maven.plugins.maven-source-plugin.version>
+        <org.apache.maven.plugins.maven-javadoc-plugin.version>
+            2.10.1
+        </org.apache.maven.plugins.maven-javadoc-plugin.version>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <org.sonatype.plugins.nexus-staging-maven-plugin.version>
@@ -34,6 +38,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
+                        <version>${org.apache.maven.plugins.maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -47,6 +52,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${org.apache.maven.plugins.maven-javadoc-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
