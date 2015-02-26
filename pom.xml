@@ -9,7 +9,7 @@
     <name>Radboud University Java test categories</name>
     <description>This project provides test categories for RU Java projects.</description>
     <packaging>jar</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
