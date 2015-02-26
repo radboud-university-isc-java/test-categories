@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>nl.ru</groupId>
+        <artifactId>open-source-maven-parent-pom</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
     <groupId>nl.ru</groupId>
     <artifactId>test-categories</artifactId>
     <name>Radboud University Java test categories</name>
@@ -20,15 +26,6 @@
         </developerConnection>
     </scm>
 
-    <developers>
-        <developer>
-            <email>p.vandongen@ru.nl</email>
-            <name>Piet van Dongen</name>
-            <url>https://github.com/pietvandongen</url>
-            <id>pietvandongen</id>
-        </developer>
-    </developers>
-
     <licenses>
         <license>
             <name>Unlicense</name>
@@ -38,95 +35,8 @@
     </licenses>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.apache.maven.plugins.maven-source-plugin.version>2.4</org.apache.maven.plugins.maven-source-plugin.version>
-        <org.apache.maven.plugins.maven-javadoc-plugin.version>
-            2.10.1
-        </org.apache.maven.plugins.maven-javadoc-plugin.version>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
-        <org.sonatype.plugins.nexus-staging-maven-plugin.version>
-            1.6.5
-        </org.sonatype.plugins.nexus-staging-maven-plugin.version>
-        <org.apache.maven.plugins.maven-gpg-plugin.version>1.6</org.apache.maven.plugins.maven-gpg-plugin.version>
     </properties>
-
-    <profiles>
-        <profile>
-            <id>continuous-integration</id>
-            <activation>
-                <property>
-                    <name>continuousIntegration</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <properties>
-                <gpg.homedir>/home/r</gpg.homedir>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${org.apache.maven.plugins.maven-source-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${org.apache.maven.plugins.maven-javadoc-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${org.apache.maven.plugins.maven-gpg-plugin.version}</version>
-                        <configuration>
-                            <gpgArguments>
-                                <argument>--batch</argument>
-                            </gpgArguments>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>
@@ -139,18 +49,6 @@
                     <source>1.7</source>
                     <target>1.7</target>
                     <showWarnings>true</showWarnings>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>${org.sonatype.plugins.nexus-staging-maven-plugin.version}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
         </plugins>
