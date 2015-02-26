@@ -8,8 +8,34 @@
     <artifactId>test-categories</artifactId>
     <name>Radboud University Java test categories</name>
     <description>This project provides test categories for RU Java projects.</description>
+    <url>https://github.com/radboud-university-isc-java/test-categories</url>
     <packaging>jar</packaging>
     <version>1.0.0</version>
+
+    <scm>
+        <url>https://github.com/radboud-university-isc-java/test-categories</url>
+        <connection>scm:git:git://github.com/radboud-university-isc-java/test-categories.git</connection>
+        <developerConnection>
+            scm:git:git@github.com:radboud-university-isc-java/test-categories.git
+        </developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>p.vandongen@ru.nl</email>
+            <name>Piet van Dongen</name>
+            <url>https://github.com/pietvandongen</url>
+            <id>pietvandongen</id>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Unlicense</name>
+            <url>http://unlicense.org/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
