@@ -99,6 +99,7 @@
             </activation>
             <properties>
                 <gpg.homedir>${env.TRAVIS_BUILD_DIR}</gpg.homedir>
+                <gpg.passphrase>${env.ENCRYPTION_PASSWORD}</gpg.passphrase>
             </properties>
         </profile>
     </profiles>
