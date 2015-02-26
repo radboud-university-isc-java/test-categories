@@ -1,4 +1,4 @@
-package org.ru.test.category;
+package nl.ru.test.category;
 
 /**
  * @author Piet van Dongen <p.vandongen@ru.nl>

@@ -1,7 +1,7 @@
-package org.ru.test.category;
+package nl.ru.test.category;
 
 /**
  * @author Piet van Dongen <p.vandongen@ru.nl>
  * @since 23/11/2014
  */
-public interface SlowTests {}
+public interface UnitTests extends FastTests {}
