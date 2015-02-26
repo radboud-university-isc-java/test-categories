@@ -1,3 +1,12 @@
 language: java
+
+env:
+  global:
+    - SONATYPE_USERNAME=pietvandongen
+    - secure: "gdsRpbbid+JnqDt0f+ED+YUaG9uFCsJzFbADuPl7pyTql/W6hKTAnNrcNzUqE/ZXjlGGq5P3bQICy2ku2DnYbu5mh0tJwuxsXDvQ/fXm7RYbb++75RtYyroGbaQ4fuqAdgVaQM9iCN1DkqrQ19FOloGq5dvM7CAUWdueKvg/0y4="
+
 jdk:
 - oraclejdk7
+
+after_success:
+- mvn clean deploy -DcontinuousIntegration=true
