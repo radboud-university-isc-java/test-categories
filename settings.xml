@@ -1,10 +1,6 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-    <activeProfiles>
-        <activeProfile>travis</activeProfile>
-    </activeProfiles>
-
     <servers>
         <server>
             <id>ossrh</id>
@@ -12,4 +8,19 @@
             <password>${env.SONATYPE_PASSWORD}</password>
         </server>
     </servers>
+
+    <profiles>
+        <profile>
+            <id>travis</id>
+            <activation>
+                <property>
+                    <name>env.TRAVIS</name>
+                </property>
+            </activation>
+            <properties>
+                <gpg.homedir>${env.TRAVIS_BUILD_DIR}</gpg.homedir>
+                <gpg.passphrase>${env.ENCRYPTION_PASSWORD}</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
 </settings>

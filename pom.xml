@@ -89,19 +89,6 @@
                 </plugins>
             </build>
         </profile>
-
-        <profile>
-            <id>travis</id>
-            <activation>
-                <property>
-                    <name>env.TRAVIS</name>
-                </property>
-            </activation>
-            <properties>
-                <gpg.homedir>${env.TRAVIS_BUILD_DIR}</gpg.homedir>
-                <gpg.passphrase>${env.ENCRYPTION_PASSWORD}</gpg.passphrase>
-            </properties>
-        </profile>
     </profiles>
 
     <distributionManagement>
