@@ -1,12 +1,13 @@
 language: java
-
 env:
   global:
-    - SONATYPE_USERNAME=pietvandongen
-    - secure: "XH+9DqSZ2F9LV0Tj1KgRiuXs0OiuQBt45vAGHoGFWuMmE78wpt/fzlR5aC5xfjTUpPIwehxtqS8SSFasPouTGkzde7i+kNc0leLEfvN2Z8WhMkj7zCJ18gAyx2dgq0juBI6lW89sjLm9ui1WC7zdKWBWmHOqt3GD578wlPc4AB4="
-
+  - SONATYPE_USERNAME=pietvandongen
+  - secure: XH+9DqSZ2F9LV0Tj1KgRiuXs0OiuQBt45vAGHoGFWuMmE78wpt/fzlR5aC5xfjTUpPIwehxtqS8SSFasPouTGkzde7i+kNc0leLEfvN2Z8WhMkj7zCJ18gAyx2dgq0juBI6lW89sjLm9ui1WC7zdKWBWmHOqt3GD578wlPc4AB4=
+  - secure: yPsSttSvIELWqhpxSCiXBvJ1KVPHOYe9dse5Flbee1UZp/CmPe9TJznULu7zK9/zW5z6JD/QyeK47ptSCOvd2BVHEfECviIb5bc1PyQaSHSU7P8MnpeD3XKzRB8mfpJzpdrkXvJyYVEV/5blIkJmMWwyTlTNWUZVv9bBUQAt/eI=
 jdk:
 - oraclejdk7
-
+before_install:
+- openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in secring.gpg.enc -out local.secring.gpg -d
+- openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in pubring.gpg.enc -out local.pubring.gpg -d
 after_success:
 - mvn clean deploy -DcontinuousIntegration=true
