@@ -3,7 +3,7 @@ language: java
 env:
   global:
     - SONATYPE_USERNAME=pietvandongen
-    - secure: "gdsRpbbid+JnqDt0f+ED+YUaG9uFCsJzFbADuPl7pyTql/W6hKTAnNrcNzUqE/ZXjlGGq5P3bQICy2ku2DnYbu5mh0tJwuxsXDvQ/fXm7RYbb++75RtYyroGbaQ4fuqAdgVaQM9iCN1DkqrQ19FOloGq5dvM7CAUWdueKvg/0y4="
+    - secure: "XH+9DqSZ2F9LV0Tj1KgRiuXs0OiuQBt45vAGHoGFWuMmE78wpt/fzlR5aC5xfjTUpPIwehxtqS8SSFasPouTGkzde7i+kNc0leLEfvN2Z8WhMkj7zCJ18gAyx2dgq0juBI6lW89sjLm9ui1WC7zdKWBWmHOqt3GD578wlPc4AB4="
 
 jdk:
 - oraclejdk7
