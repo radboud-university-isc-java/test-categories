@@ -11,3 +11,6 @@ before_install:
 - openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in .pubring.gpg.enc -out pubring.gpg -d
 after_success:
 - mvn clean deploy -DdeployArtifacts=true --settings settings.xml
+notifications:
+  slack:
+    secure: gIsr35+hGq/KkFooXOVs5rW7rRTgKHD9ibvL06+qYW8OTKGIsGJsvM6+/PeSDEkJG525q42NkiXYXQf5lS88J7XYEBsZYc+IJ7b8xbK/D48gfnDCGljya6U9u2R/WUs7Q2wZM5oISUtCA7vqvj/kkdu848WNvDPD1bfxHqU82rM=
