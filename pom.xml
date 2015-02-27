@@ -41,12 +41,6 @@
     <profiles>
         <profile>
             <id>deploy-artifacts</id>
-            <activation>
-                <property>
-                    <name>deployArtifacts</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <build>
                 <plugins>
                     <plugin>

@@ -10,4 +10,4 @@ before_install:
 - openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in .secring.gpg.enc -out secring.gpg -d
 - openssl aes-256-cbc -pass pass:$ENCRYPTION_PASSWORD -in .pubring.gpg.enc -out pubring.gpg -d
 after_success:
-- mvn clean deploy -DcontinuousIntegration=true --settings settings.xml
+- mvn clean deploy -DdeployArtifacts=true --settings settings.xml
